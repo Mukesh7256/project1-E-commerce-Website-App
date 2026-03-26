@@ -36,7 +36,7 @@ const getTotalCartAmount = () => {
       return totalAmount;
 }
 
-const getTotalCartItmes = () => {
+const getTotalCartItems = () => {
   let totalItem = 0;
   for(const item in cartItems)
     {
@@ -49,7 +49,7 @@ const getTotalCartItmes = () => {
 }
 
   const contextValue = {
-    getTotalCartItmes,
+    getTotalCartItems,
     getTotalCartAmount,
     all_product,
     cartItems,
