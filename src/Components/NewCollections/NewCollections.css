@@ -1,79 +1,56 @@
-.NewCollections{
+.NewCollections {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    height: 30vh;
-    margin-bottom: 200px;
+    /* Removed height: 30vh — let content define the height naturally */
+    /* Removed margin-bottom: 200px — spacing handled by newsletter-section padding */
+    padding: clamp(30px, 5vw, 60px) clamp(16px, 4vw, 40px);
+    width: 100%;
+    box-sizing: border-box;
 }
-.NewCollections h1{
+
+.NewCollections h1 {
     color: #171717;
-    font-size: 50px;
+    font-size: clamp(24px, 4vw, 50px);
     font-weight: 600;
-    margin-top: 50px;
+    margin-top: clamp(20px, 4vw, 50px);
 }
-.NewCollections hr{
-    width: 200px;
+
+.NewCollections hr {
+    width: clamp(100px, 15vw, 200px);
     height: 6px;
     background: #252525;
     border-radius: 10px;
+    border: none;
 }
-.collections{
-    margin-top: 50px;
+
+.collections {
+    margin-top: clamp(20px, 4vw, 50px);
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(12px, 2vw, 30px);
+    width: 100%;
 }
 
-/* media query */
-
-@media(max-width:1280px){
-    .new-collections h1{
-        font-size: 40px;
-    }
-    .new-collections hr{
-        width: 160px;
-        height: 4px;
-    }
-    .collections{
-        gap: 20px;
-        margin-top: 30px;
+/* Tablet */
+@media (max-width: 1024px) {
+    .collections {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
-@media(max-width:1024px){
-    .new-collections h1{
-        font-size: 30px;
-    }
-    .new-collections hr{
-        width: 120px;
-        height: 3px;
-    }
-    .collections{
-        gap: 15px;
-        margin-top: 20px;
+/* Mobile landscape */
+@media (max-width: 800px) {
+    .collections {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media(max-width:800px){
-    .new-collections{
-        gap: 6px;
-    }
-    .new-collections h1{
-        font-size: 20px;
-    }
-    .new-collections hr{
-        width: 100px;
-    }
-    .collections{
-        gap: 5px;
-    }
-}
-
-@media(max-width:500px){
-    .collections{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
+/* Mobile portrait */
+@media (max-width: 500px) {
+    .collections {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
     }
 }

@@ -36,3 +36,68 @@
     transform: rotate(360deg);
   }
 }
+
+/* ===== Global Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== App Layout ===== */
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.app-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* ===== Global Font ===== */
+body {
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #1a1a1a;
+    background-color: #fff;
+}
+
+/* ===== Global Link Reset ===== */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===== Global List Reset ===== */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ===== Global Image Reset ===== */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== Global Button Reset ===== */
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===== Global Input Reset ===== */
+input {
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    border: none;
+}

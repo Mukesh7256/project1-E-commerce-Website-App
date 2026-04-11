@@ -1,55 +1,99 @@
-.footer{
+.footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+    gap: clamp(24px, 4vw, 50px);
+    padding: clamp(20px, 4vw, 40px) clamp(16px, 4vw, 40px);
+    box-sizing: border-box;
 }
-.footer-logo{   
+
+.footer-logo {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: clamp(10px, 2vw, 20px);
 }
-.footer-logo p{
+
+.footer-logo p {
     color: #383838;
-    font-size: 46px;
+    font-size: clamp(24px, 4vw, 46px);
     font-weight: 700;
 }
-.footer-links{
+
+.footer-links {
     display: flex;
+    flex-wrap: wrap;           /* wraps to next line on small screens */
+    justify-content: center;
     list-style: none;
-    gap: 50px;
+    gap: clamp(16px, 3vw, 50px);
     color: #252525;
-    font-size: 20px;
+    font-size: clamp(14px, 1.8vw, 20px);
+    padding: 0;
+    margin: 0;
+    text-align: center;
 }
-.footer-links li{
+
+.footer-links li {
     cursor: pointer;
 }
-.footer-social-icon{
+
+.footer-social-icon {
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(10px, 2vw, 20px);
 }
-.footer-icons-container{
-    padding: 10px;
-    padding-bottom: 6px;
+
+.footer-icons-container {
+    padding: clamp(6px, 1vw, 10px);
+    padding-bottom: clamp(4px, 0.8vw, 6px);
     background: #fbfbfb;
-    border: 1px solid #ebebeb ;
+    border: 1px solid #ebebeb;
     cursor: pointer;
 }
-.footer-copyright{
+
+.footer-copyright {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: clamp(16px, 2.5vw, 30px);
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: clamp(16px, 3vw, 30px);
     color: #1a1a1a;
-    font-size: 20px;
+    font-size: clamp(13px, 1.6vw, 20px);
+    text-align: center;
+    padding: 0 16px;
+    box-sizing: border-box;
 }
-.footer-copyright hr{
-    width: 80%;
+
+.footer-copyright hr {
+    width: 90%;
     border: none;
     border-radius: 10px;
     height: 3px;
     background: #c7c7c7;
+}
+
+/* ------- Tablet --------- */
+@media (max-width: 768px) {
+    .footer-links {
+        gap: 16px 24px;        /* row-gap column-gap */
+    }
+}
+
+/* ------- Mobile --------- */
+@media (max-width: 480px) {
+    .footer-logo p {
+        font-size: 22px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .footer-copyright hr {
+        width: 100%;
+    }
 }
