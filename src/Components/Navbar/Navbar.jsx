@@ -6,11 +6,22 @@ import { Link, useLocation } from "react-router-dom";
 import { ShopContext } from "../../Context/ShopContext";
 
 const Navbar = () => {
-  const [menu, setMenu] = useState("shop");
   const [menuOpen, setMenuOpen] = useState(false);
   const { getTotalCartItems } = useContext(ShopContext);
   const menuRef = useRef(null);
   const location = useLocation();
+
+  // Get current path to set active link automatically
+  const getActivePath = () => {
+    const path = location.pathname;
+    if (path === "/") return "shop";
+    if (path === "/mens") return "mens";
+    if (path === "/womens") return "womens";
+    if (path === "/kids") return "kids";
+    return "";
+  };
+
+  const activePath = getActivePath();
 
   // Close menu on route change
   useEffect(() => {
@@ -30,7 +41,6 @@ const Navbar = () => {
 
   return (
     <nav className="navbar" ref={menuRef}>
-
       <div className="nav-logo">
         <img src={logo} alt="Shopper Logo" />
         <p>SHOPPER</p>
@@ -49,17 +59,17 @@ const Navbar = () => {
       </button>
 
       <ul className={`nav-menu ${menuOpen ? "nav-menu-visible" : ""}`}>
-        <li onClick={() => { setMenu("shop"); setMenuOpen(false); }}>
-          <Link to="/" className={menu === "shop" ? "active" : ""}>Shop</Link>
+        <li onClick={() => setMenuOpen(false)}>
+          <Link to="/" className={activePath === "shop" ? "active" : ""}>Shop</Link>
         </li>
-        <li onClick={() => { setMenu("mens"); setMenuOpen(false); }}>
-          <Link to="/mens" className={menu === "mens" ? "active" : ""}>Men</Link>
+        <li onClick={() => setMenuOpen(false)}>
+          <Link to="/mens" className={activePath === "mens" ? "active" : ""}>Men</Link>
         </li>
-        <li onClick={() => { setMenu("womens"); setMenuOpen(false); }}>
-          <Link to="/womens" className={menu === "womens" ? "active" : ""}>Women</Link>
+        <li onClick={() => setMenuOpen(false)}>
+          <Link to="/womens" className={activePath === "womens" ? "active" : ""}>Women</Link>
         </li>
-        <li onClick={() => { setMenu("kids"); setMenuOpen(false); }}>
-          <Link to="/kids" className={menu === "kids" ? "active" : ""}>Kids</Link>
+        <li onClick={() => setMenuOpen(false)}>
+          <Link to="/kids" className={activePath === "kids" ? "active" : ""}>Kids</Link>
         </li>
       </ul>
 
@@ -70,11 +80,10 @@ const Navbar = () => {
         <Link to="/cart" className="nav-cart-icon">
           <img src={cart_icon} alt="Cart" />
           {getTotalCartItems() > 0 && (
-            <div className="nav-cart-count">{getTotalCartItems()}</div>
+            <span className="nav-cart-count">{getTotalCartItems()}</span>
           )}
         </Link>
       </div>
-
     </nav>
   );
 };

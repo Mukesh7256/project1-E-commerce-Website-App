@@ -241,3 +241,20 @@
         font-size: 12px;
     }
 }
+
+/* Add this to ensure active link has color */
+.nav-menu li a.active {
+    color: #ff4141;
+    font-weight: 600;
+}
+
+/* For the underline effect on active link */
+.nav-menu li a.active::after {
+    content: '';
+    display: block;
+    width: 80%;
+    height: 3px;
+    background: #ff4141;
+    border-radius: 10px;
+    margin-top: 3px;
+}

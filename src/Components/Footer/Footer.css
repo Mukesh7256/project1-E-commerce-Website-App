@@ -97,3 +97,75 @@
         width: 100%;
     }
 }
+
+/* Add to your existing CSS - optional enhancements */
+
+.footer-links li {
+    cursor: pointer;
+    transition: color 0.2s ease; /* Smooth hover effect */
+    position: relative;
+}
+
+.footer-links li:hover {
+    color: #ff4141; /* Brand color on hover */
+}
+
+.footer-links li::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 50%;
+    background: #ff4141;
+    transition: all 0.2s ease;
+}
+
+.footer-links li:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.footer-icons-container {
+    padding: clamp(6px, 1vw, 10px);
+    padding-bottom: clamp(4px, 0.8vw, 6px);
+    background: #fbfbfb;
+    border: 1px solid #ebebeb;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition */
+    border-radius: 50%; /* Make icons circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-icons-container:hover {
+    transform: translateY(-3px); /* Lift effect */
+    border-color: #ff4141;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.footer-icons-container img {
+    width: clamp(20px, 3vw, 30px);
+    height: auto;
+}
+
+.footer-copyright p {
+    margin: 0;
+}
+
+/* Optional: Add animation on page load */
+.footer-logo {
+    animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,3 +1,6 @@
+/* ===== Remove default create-react-app styles (optional) ===== */
+/* Comment out or delete the default CRA styles if not needed */
+/*
 .App {
   text-align: center;
 }
@@ -36,6 +39,7 @@
     transform: rotate(360deg);
   }
 }
+*/
 
 /* ===== Global Reset ===== */
 * {
@@ -49,6 +53,8 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden; /* Prevents horizontal scroll */
 }
 
 .app-main {
@@ -65,16 +71,27 @@ body {
     -moz-osx-font-smoothing: grayscale;
     color: #1a1a1a;
     background-color: #fff;
+    line-height: 1.5; /* Better readability */
+}
+
+/* ===== Smooth Scrolling ===== */
+html {
+    scroll-behavior: smooth;
 }
 
 /* ===== Global Link Reset ===== */
 a {
     text-decoration: none;
     color: inherit;
+    transition: color 0.2s ease; /* Smooth hover effect */
+}
+
+a:hover {
+    color: #ff4141; /* Optional hover effect */
 }
 
 /* ===== Global List Reset ===== */
-ul {
+ul, ol {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -85,6 +102,7 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
+    object-fit: cover; /* Better image handling */
 }
 
 /* ===== Global Button Reset ===== */
@@ -93,11 +111,64 @@ button {
     outline: none;
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
+    background: none;
+    transition: all 0.2s ease;
+}
+
+button:active {
+    transform: scale(0.98); /* Optional click effect */
 }
 
 /* ===== Global Input Reset ===== */
-input {
+input, textarea, select {
     font-family: 'Poppins', sans-serif;
     outline: none;
     border: none;
+    font-size: 16px; /* Prevents zoom on mobile */
+}
+
+/* ===== Container Utility (Optional) ===== */
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== Responsive Container ===== */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 0 15px;
+    }
+}
+
+/* ===== Scrollbar Styling (Optional) ===== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }

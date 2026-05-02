@@ -1,23 +1,22 @@
-.NewCollections {
+.newcollections {  /* Changed to lowercase to match component */
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    /* Removed height: 30vh — let content define the height naturally */
-    /* Removed margin-bottom: 200px — spacing handled by newsletter-section padding */
     padding: clamp(30px, 5vw, 60px) clamp(16px, 4vw, 40px);
     width: 100%;
     box-sizing: border-box;
 }
 
-.NewCollections h1 {
+.newcollections h1 {
     color: #171717;
     font-size: clamp(24px, 4vw, 50px);
     font-weight: 600;
     margin-top: clamp(20px, 4vw, 50px);
+    text-align: center;
 }
 
-.NewCollections hr {
+.newcollections hr {
     width: clamp(100px, 15vw, 200px);
     height: 6px;
     background: #252525;
@@ -31,26 +30,46 @@
     grid-template-columns: repeat(4, 1fr);
     gap: clamp(12px, 2vw, 30px);
     width: 100%;
+    max-width: 1400px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Desktop */
+@media (max-width: 1280px) {
+    .collections {
+        gap: 20px;
+    }
 }
 
 /* Tablet */
 @media (max-width: 1024px) {
     .collections {
         grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
     }
 }
 
-/* Mobile landscape */
+/* Mobile Landscape */
 @media (max-width: 800px) {
     .collections {
         grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 0 15px;
     }
 }
 
-/* Mobile portrait */
-@media (max-width: 500px) {
+/* Mobile Portrait */
+@media (max-width: 600px) {
     .collections {
-        grid-template-columns: repeat(2, 1fr);
         gap: 12px;
+        padding: 0 10px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 450px) {
+    .collections {
+        gap: 10px;
     }
 }

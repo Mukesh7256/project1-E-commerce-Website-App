@@ -89,3 +89,49 @@
         width: 100%;
     }
 }
+
+/* Add this to your existing CSS - optional */
+
+.newsletter-input-box input:focus {
+    outline: none;
+}
+
+.newsletter-input-box button:hover {
+    background: #333;
+    transition: background 0.3s ease;
+}
+
+.newsletter-input-box button:active {
+    transform: scale(0.98);
+}
+
+.success-message {
+    color: #4caf50;
+    font-size: clamp(12px, 1.4vw, 14px);
+    margin-top: 10px;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Better focus states */
+.newsletter-input-box input:focus {
+    outline: 2px solid #ff4141;
+    outline-offset: -2px;
+}
+
+/* Prevent zoom on mobile */
+@media (max-width: 600px) {
+    .newsletter-input-box input {
+        font-size: 16px; /* Prevents zoom on focus in iOS */
+    }
+}

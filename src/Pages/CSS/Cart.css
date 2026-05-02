@@ -1,0 +1,10 @@
+.cart-page {
+    width: 100%;
+    min-height: 100vh;
+    background: #fff;
+}
+
+/* No overflow issues */
+.cart-page {
+    overflow-x: hidden;
+}

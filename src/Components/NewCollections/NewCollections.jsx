@@ -5,7 +5,7 @@ import Item from '../Items/Item'
 
 const NewCollections = () => {
   return (
-    <div className='NewCollections'>
+    <div className='newcollections'>
         <h1>NEW COLLECTIONS</h1>
         <hr/>
         <div className="collections">
@@ -18,3 +18,4 @@ const NewCollections = () => {
 }
 
 export default NewCollections
+

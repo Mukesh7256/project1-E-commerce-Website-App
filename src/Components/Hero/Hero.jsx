@@ -5,6 +5,12 @@ import arrow_icon from '../Assets/arrow.png';
 import hero_image from '../Assets/hero_image.png';
 
 const Hero = () => {
+  const handleShopNow = () => {
+    console.log('Navigate to collections');
+    // Add navigation logic here
+    // window.location.href = '/new-collections';
+  };
+
   return (
     <div className='hero'>
         <div className="hero-left">
@@ -12,18 +18,18 @@ const Hero = () => {
             <div>
                 <div className="hero-hand-icon">
                     <p>new</p>
-                    <img src={hand_icon} alt='' />
+                    <img src={hand_icon} alt='hand icon' />
                 </div>
                 <p>Collections</p>
                 <p>for everyone</p>
             </div>
-            <div className="hero-latest-btn">
+            <div className="hero-latest-btn" onClick={handleShopNow}>
                 <div>Latest Collection</div>
-                <img src={arrow_icon} alt="" />
+                <img src={arrow_icon} alt="arrow icon" />
             </div>
         </div>
         <div className="hero-right">
-            <img src={hero_image} alt="" />
+            <img src={hero_image} alt="hero model" />
         </div>
     </div>
   )
